@@ -74,12 +74,12 @@ class adminController extends Controller
     }
 
     public function studentlist(Request $request) {
-      $students = User::where('role', 'student')->get();
+      $students = User::select('id','first_name','last_name','email','gender','phone')->where('role', 'student')->get();
       return response()->json(['status'=>'success','data'=>$students]);
      
     }
     public function getTeacherList(){
-      $students = User::where('role', 'teacher')->get();
+      $students = User::select('id','first_name','last_name','email','gender','phone')->where('role', 'teacher')->get();
       return response()->json(['status'=>'success','data'=>$students]);
     }
     public function addstudent(Request $request)
@@ -93,14 +93,14 @@ class adminController extends Controller
     // public function trainedstudents(){}
     public function untrainedstudent(){
 
-          $students = User::where('role', 'student')->where('trainstatus',0)->get();
+          $students = User::select('id','first_name','last_name','email','gender','phone')->where('role', 'student')->where('trainstatus',0)->get();
           return response()->json(['status'=>'success','data'=>$students]);
 
 
     }
     public function trainedstudent(){
 
-          $students = User::where('role', 'student')->where('trainstatus',1)->get();
+          $students = User::select('id','first_name','last_name','email','gender','phone')->where('role', 'student')->where('trainstatus',1)->get();
           return response()->json(['status'=>'success','data'=>$students]);
 
 
