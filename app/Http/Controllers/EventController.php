@@ -37,6 +37,7 @@ class EventController extends Controller
 
     public function calendarEvents(Request $request)
     {
+       
         $current_school_session_id = $this->getSchoolCurrentSession();
         $event = null;
         switch ($request->type) {
@@ -64,7 +65,7 @@ class EventController extends Controller
             default:
                 break;
         }
-        dd($event);
+        
         return response()->json($event);
     }
 }

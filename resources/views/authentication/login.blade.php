@@ -4,9 +4,9 @@
 =========================================================
 
 * Product Page: https://www.creative-tim.com/product/argon-dashboard
-* Copyright 2022 Creative Tim (https://www.creative-tim.com)
+* Copyright 2022RAAS AI Attendance (https://www.creative-tim.com)
 * Licensed under MIT (https://www.creative-tim.com/license)
-* Coded by Creative Tim
+* Coded byRAAS AI Attendance
 
 =========================================================
 
@@ -21,7 +21,7 @@
   <link rel="apple-touch-icon" sizes="76x76" href="{{asset('assets/img/apple-icon.png')}}">
   <link rel="icon" type="image/png" href="{{asset('assets/img/favicon.png')}}">
   <title>
-    Argon Dashboard 2 by Creative Tim
+    Argon Dashboard 2 byRAAS AI Attendance
   </title>
   <!--     Fonts and icons     -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />

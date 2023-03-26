@@ -92,7 +92,8 @@ Route::middleware(['auth'])->group(function () {
 
     // Teachers
     Route::get('/teachers/add', function () {
-        return view('teachers.add');
+       
+        return view('teacher.add');
     })->name('teacher.create.show');
     Route::get('/teachers/edit/{id}', [UserController::class, 'editTeacher'])->name('teacher.edit.show');
     Route::get('/teachers/view/list', [UserController::class, 'getTeacherList'])->name('teacher.list.show');

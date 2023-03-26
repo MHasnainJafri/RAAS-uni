@@ -6,7 +6,7 @@
         <link rel="apple-touch-icon" sizes="76x76" href="./assets/img/apple-icon.png')}}">
         <link rel="icon" type="image/png" href="./assets/img/favicon.png')}}">
         <title>
-          Argon Dashboard 2 by Creative Tim
+          Argon Dashboard 2 byRAAS AI Attendance
         </title>
         <!--     Fonts and icons     -->
         <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
@@ -88,7 +88,7 @@
             <ul class="nav collapse {{ request()->is('teachers*')? 'show' : 'hide' }} bg-white" id="teacher-submenu">
                 <li class="nav-item w-100" {{ request()->routeIs('teacher.list.show')? 'style="font-weight:bold;"' : '' }}><a class="nav-link" href="{{route('teacher.list.show')}}"><i class="bi bi-person-video2 me-2"></i> View Teachers</a></li>
                 @if (!session()->has('browse_session_id') && Auth::user()->role == "admin")
-                <li class="nav-item w-100" {{ request()->routeIs('teacher.create.show')? 'style="font-weight:bold;"' : '' }}><a class="nav-link" href="{{route('teacher.create.show')}}"><i class="bi bi-person-plus me-2"></i> Add Teacher</a></li>
+                {{-- <li class="nav-item w-100" {{ request()->routeIs('teacher.create.show')? 'style="font-weight:bold;"' : '' }}><a class="nav-link" href="{{route('teacher.create.show')}}"><i class="bi bi-person-plus me-2"></i> Add Teacher</a></li> --}}
                 @endif
             </ul>
         </li>
@@ -132,7 +132,7 @@
         </li>
         @endif
         @if(Auth::user()->role != "student")
-        <li class="nav-item border-bottom">
+        {{-- <li class="nav-item border-bottom">
             <a type="button" href="#exam-grade-submenu" data-bs-toggle="collapse" class="d-flex nav-link {{ request()->is('exams*')? 'active' : '' }}"><i class="bi bi-file-text"></i> <span class="ms-2 d-inline d-sm-none d-md-none d-xl-inline">Exams / Grades</span>
                 <i class="ms-auto d-inline d-sm-none d-md-none d-xl-inline bi bi-chevron-down"></i>
             </a>
@@ -146,7 +146,7 @@
                 @endif
                 <li class="nav-item w-100" {{ request()->routeIs('exam.grade.system.index')? 'style="font-weight:bold;"' : '' }}><a class="nav-link" href="{{route('exam.grade.system.index')}}"><i class="bi bi-file-ruled me-2"></i> View Grade Systems</a></li>
             </ul>
-        </li>
+        </li> --}}
 
         @endif
         @if (Auth::user()->role == "admin")
@@ -169,9 +169,9 @@
         </li>
         @endif
         @if (!session()->has('browse_session_id') && Auth::user()->role == "admin")
-        <li class="nav-item">
+        {{-- <li class="nav-item">
             <a class="nav-link {{ request()->is('promotions*')? 'active' : '' }}" href="{{url('promotions/index')}}"><i class="bi bi-sort-numeric-up-alt"></i> <span class="nav-link-text ms-1">Promotion</span></a>
-        </li>
+        </li> --}}
         @endif
 
 
@@ -218,9 +218,7 @@
                      <i class="bi bi-door-open me-2"></i> {{ __('Logout') }}
                  </a>
 
-                 <form id="logout-form" action="
-                 {{-- {{ route('logout') }} --}}
-                 " method="POST" class="d-none">
+                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                      @csrf
                  </form>
 

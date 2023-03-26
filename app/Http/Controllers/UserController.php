@@ -120,7 +120,7 @@ class UserController extends Controller
      */
     public function storeStudent(StudentStoreRequest $request)
     {
-        return 1;
+     
         try {
             $this->userRepository->createStudent($request->validated());
 
